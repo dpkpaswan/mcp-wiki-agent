@@ -1,7 +1,7 @@
-fastapi==0.115.0
-uvicorn==0.30.0
-pydantic==2.7.0
+fastapi
+uvicorn
+pydantic
 groq
 wikipedia-api
-mcp>=1.0.0
+mcp
 python-dotenv
