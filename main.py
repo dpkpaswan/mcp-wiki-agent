@@ -2,13 +2,13 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from mcp_server import search_wikipedia
 from groq import Groq
+from dotenv import load_dotenv
 import os, uvicorn
 
-app = FastAPI(title="MCP Wiki Agent")
+load_dotenv()  # ← loads .env file automatically
 
-# Hardcode key directly for now
-GROQ_API_KEY = "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"  # ← paste your gsk_... key here
-client = Groq(api_key=GROQ_API_KEY)
+app = FastAPI(title="MCP Wiki Agent")
+client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
 class QueryRequest(BaseModel):
     query: str
@@ -43,3 +43,5 @@ async def ask(request: QueryRequest):
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=int(os.getenv("PORT", 8080)))
+
+

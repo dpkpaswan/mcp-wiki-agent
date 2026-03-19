@@ -4,3 +4,4 @@ pydantic==2.7.0
 groq
 wikipedia-api
 mcp
+python-dotenv
