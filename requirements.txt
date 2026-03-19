@@ -3,5 +3,5 @@ uvicorn==0.30.0
 pydantic==2.7.0
 groq
 wikipedia-api
-mcp
+mcp>=1.0.0
 python-dotenv
